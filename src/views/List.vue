@@ -9,7 +9,7 @@
         class="card"
       >
         <div class="card__flag">
-          <img :src="country.flag" alt="" />
+          <img :src="country.flag" alt="Flag" />
         </div>
         <div class="card__container">
           <h3>{{ country.name }}</h3>
@@ -49,7 +49,7 @@ export default {
       margin 1rem .5rem .5rem 0
       padding .5rem
       box-sizing border-box
-      background: #ffffff
+      background: #fff
       text-align center
       cursor pointer
       box-shadow 0 4px 8px 0 rgba(0,0,0,0.2)
