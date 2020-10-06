@@ -1,5 +1,7 @@
 # countries-vue-sample-app
 
+Sample Vue.js based application which allows to list all countries and see the details.
+
 ## Project setup
 ```
 npm install
