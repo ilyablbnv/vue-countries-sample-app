@@ -1,5 +1,5 @@
 <template>
-  <div class="list">
+  <div class="list" :class="mode">
     <Search />
     <div class="cards">
       <div
@@ -7,6 +7,7 @@
         :key="country.name"
         @click="$router.push(`/detail/${country.name}`)"
         class="card"
+        :class="mode"
       >
         <div class="card__flag">
           <img :src="country.flag" alt="Flag" />
@@ -31,7 +32,7 @@ export default {
     await this.$store.dispatch(FETCH_COUNTRIES, {});
   },
   computed: {
-    ...mapState(["countries"])
+    ...mapState(["countries", "mode"])
   }
 };
 </script>
@@ -40,6 +41,9 @@ export default {
 .list
   padding: 25px 30px
   background: #f5f5f5
+  &.dark
+    background: #192734;
+    color: #fff;
   .cards
     display flex
     justify-content space-between
@@ -54,6 +58,8 @@ export default {
       cursor pointer
       box-shadow 0 4px 8px 0 rgba(0,0,0,0.2)
       transition 0.3s
+      &.dark
+        background: #192734;
       &:hover
         box-shadow 0 8px 16px 0 rgba(0,0,0,0.2)
       &__flag

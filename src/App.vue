@@ -22,6 +22,7 @@ export default {
     outline none
     border none
 #app
+  height 100vh
   font-family 'Nutino Sans', sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale

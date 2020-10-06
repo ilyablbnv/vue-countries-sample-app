@@ -1,6 +1,6 @@
 <template>
-  <div class="detail">
-    <div class="card">
+  <div class="detail" :class="mode">
+    <div class="card" :class="mode">
       <img class="card__flag" :src="country.flag" alt="Flag" />
       <h3>{{ country.name }}</h3>
       <div class="card__info">
@@ -27,7 +27,7 @@ export default {
     });
   },
   computed: {
-    ...mapState(["country"]),
+    ...mapState(["country", "mode"]),
     currencies() {
       return this.country?.currencies.map(l => l.name).join(", ");
     },
@@ -41,6 +41,11 @@ export default {
 .detail
   display flex
   justify-content center
+  align-items baseline
+  height 100%
+  &.dark
+    background: #192734;
+    color: #fff;
   .card
     flex: 0 1 50%
     margin 1rem .5rem .5rem 0
@@ -51,6 +56,8 @@ export default {
     cursor pointer
     box-shadow 0 4px 8px 0 rgba(0,0,0,0.2)
     transition 0.3s
+    &.dark
+      background: #192734;
     &:hover
       box-shadow 0 8px 16px 0 rgba(0,0,0,0.2)
     background-color #fff
