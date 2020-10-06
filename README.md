@@ -2,6 +2,8 @@
 
 Sample Vue.js based application which allows to list all countries and see the details.
 
+API: https://restcountries.eu/
+
 ## Project setup
 ```
 npm install
